@@ -4,12 +4,12 @@ using System.Text;
 
 namespace TecSoftware.EntidadesDominio
 {
-    public class Operacion
+    public class RuletaApuesta
     {
-        public int OperacionId { get; set; }
+        public int RuletaApuestaId { get; set; }
         public int RuletaId { get; set; }
-        public int Fecha { get; set; }
-        public EstatusOperacion Estado { get; set; }
+        public int Numero { get; set; }
+        public string Color { get; set; }
 
         public virtual Ruleta Ruleta { get; set; }
     }

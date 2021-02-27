@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TecSoftware.ServiciosDominio;
 
 namespace TecSoftware.Api
 {
@@ -24,7 +25,15 @@ namespace TecSoftware.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
+
+            services.AddSingleton<IConfiguration>(Configuration);
+
+            services.AddTransient<ISdRuleta, SdRuleta>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TecSoftware.EntidadesDominio\TecSoftware.EntidadesDominio.csproj" />
+    <ProjectReference Include="..\TecSoftware.Persistencia\TecSoftware.Persistencia.csproj" />
   </ItemGroup>
 
 </Project>

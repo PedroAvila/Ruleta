@@ -10,5 +10,8 @@ namespace TecSoftware.EntidadesDominio
         public int RuletaApuestaId { get; set; }
         public int ClienteId { get; set; }
         public decimal Pago { get; set; }
+
+        public virtual RuletaApuesta RuletaApuesta { get; set; }
+        public virtual Cliente Cliente { get; set; }
     }
 }
