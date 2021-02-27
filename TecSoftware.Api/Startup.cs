@@ -34,6 +34,7 @@ namespace TecSoftware.Api
             services.AddSingleton<IConfiguration>(Configuration);
 
             services.AddTransient<ISdRuleta, SdRuleta>();
+            services.AddTransient<ISdOperacion, SdOperacion>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

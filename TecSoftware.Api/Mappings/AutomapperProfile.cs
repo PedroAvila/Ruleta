@@ -12,6 +12,7 @@ namespace TecSoftware.Api
         public AutomapperProfile()
         {
             CreateMap<Ruleta, RuletaDto>().ReverseMap();
+            CreateMap<Operacion, OperacionDto>().ReverseMap();
         }
 
     }

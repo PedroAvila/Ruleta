@@ -9,7 +9,6 @@ namespace TecSoftware.EntidadesDominio
         public int MovimientoId { get; set; }
         public int OperacionId { get; set; }
         public int ApuestaId { get; set; }
-        public decimal MontoInicial { get; set; }
         public decimal Ingreso { get; set; }
 
         public virtual Operacion Operacion { get; set; }

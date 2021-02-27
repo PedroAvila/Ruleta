@@ -13,6 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TecSoftware.BusinessException\TecSoftware.BusinessException.csproj" />
+    <ProjectReference Include="..\TecSoftware.EntidadesDominio\TecSoftware.EntidadesDominio.csproj" />
     <ProjectReference Include="..\TecSoftware.ServiciosDominio\TecSoftware.ServiciosDominio.csproj" />
   </ItemGroup>
 

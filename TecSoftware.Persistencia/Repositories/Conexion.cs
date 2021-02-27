@@ -8,17 +8,14 @@ namespace TecSoftware.Persistencia
 {
     public class Conexion
     {
-        private IConfiguration _configuration;
-        //public Conexion(IConfiguration configuration)
-        //{
-        //    _configuration = configuration;
-        //}
+        private static IConfiguration _configuration;
+        
         public Conexion(IConfiguration configuration)
         {
             _configuration = configuration;
         }
 
-        public SqlConnection Conectar(string con)
+        public static SqlConnection Connect(string con)
         {
             try
             {

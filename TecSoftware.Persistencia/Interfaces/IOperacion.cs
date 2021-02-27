@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace TecSoftware.Persistencia
 {
-    public interface IRuleta<T> where T: class
+    public interface IOperacion<T> where T: class
     {
-        Task Create(T entity);
-        Task<decimal> GetMaximumAmount(int Id);
+        Task RouletteOpening(T entity);
     }
 }

@@ -15,13 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.1 EntidadesDominio", "2.1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.2 ServiciosDominio", "2.2 ServiciosDominio", "{9E29BBE5-D3E0-42AF-A207-4AC4992BD69C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecSoftware.Api", "TecSoftware.Api\TecSoftware.Api.csproj", "{C6E5303D-DE47-48DA-8F4B-F92D036841EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TecSoftware.Api", "TecSoftware.Api\TecSoftware.Api.csproj", "{C6E5303D-DE47-48DA-8F4B-F92D036841EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecSoftware.EntidadesDominio", "TecSoftware.EntidadesDominio\TecSoftware.EntidadesDominio.csproj", "{AE2D9285-64B6-4898-87C7-A709804D7E84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TecSoftware.EntidadesDominio", "TecSoftware.EntidadesDominio\TecSoftware.EntidadesDominio.csproj", "{AE2D9285-64B6-4898-87C7-A709804D7E84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecSoftware.ServiciosDominio", "TecSoftware.ServiciosDominio\TecSoftware.ServiciosDominio.csproj", "{7E707825-A34A-4041-92FA-A16A461BEEC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TecSoftware.ServiciosDominio", "TecSoftware.ServiciosDominio\TecSoftware.ServiciosDominio.csproj", "{7E707825-A34A-4041-92FA-A16A461BEEC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecSoftware.Persistencia", "TecSoftware.Persistencia\TecSoftware.Persistencia.csproj", "{CD849739-9D0C-4CD6-9EB3-21A3325EE6BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TecSoftware.Persistencia", "TecSoftware.Persistencia\TecSoftware.Persistencia.csproj", "{CD849739-9D0C-4CD6-9EB3-21A3325EE6BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 BusinessException", "4 BusinessException", "{641A7C20-2883-4CC4-87BB-F8DA26D25530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecSoftware.BusinessException", "TecSoftware.BusinessException\TecSoftware.BusinessException.csproj", "{55C23C6D-1149-4902-94D3-EEE318BEEE01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,10 @@ Global
 		{CD849739-9D0C-4CD6-9EB3-21A3325EE6BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD849739-9D0C-4CD6-9EB3-21A3325EE6BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD849739-9D0C-4CD6-9EB3-21A3325EE6BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C23C6D-1149-4902-94D3-EEE318BEEE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C23C6D-1149-4902-94D3-EEE318BEEE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C23C6D-1149-4902-94D3-EEE318BEEE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C23C6D-1149-4902-94D3-EEE318BEEE01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,8 @@ Global
 		{AE2D9285-64B6-4898-87C7-A709804D7E84} = {EDCA428F-40B5-4F89-B367-360B527DD1A5}
 		{7E707825-A34A-4041-92FA-A16A461BEEC3} = {9E29BBE5-D3E0-42AF-A207-4AC4992BD69C}
 		{CD849739-9D0C-4CD6-9EB3-21A3325EE6BE} = {67CB76FB-93C4-4499-854F-98158DB7F7E6}
+		{641A7C20-2883-4CC4-87BB-F8DA26D25530} = {E37542E7-2244-4DF1-9404-8E7AA91310EF}
+		{55C23C6D-1149-4902-94D3-EEE318BEEE01} = {641A7C20-2883-4CC4-87BB-F8DA26D25530}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BECCF6F5-1025-4ECB-BB7D-8D0052FA504A}
