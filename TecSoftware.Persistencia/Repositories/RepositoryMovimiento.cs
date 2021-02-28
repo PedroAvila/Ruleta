@@ -25,5 +25,41 @@ namespace TecSoftware.Persistencia
                 }
             }
         }
+
+        public async Task<List<MovimientoExtend>> GetMoveBet(int ruleta)
+        {
+            using (SqlConnection cn = Conexion.Connect("default"))
+            {
+                cn.Open();
+                using (var cmd = cn.CreateCommand())
+                {
+                    cmd.CommandText = 
+                        "SELECT m.MovimientoId, m.OperacionId, m.ApuestaId, a.Numero, m.Ingreso, o.Estado" +
+                        " FROM Movimientos AS m" +
+                        " JOIN Operaciones AS o ON o.OperacionId = m.OperacionId" +
+                        " JOIN Apuestas AS a ON a.ApuestaId = m.ApuestaId" +
+                        " WHERE o.RuletaId = @ruleta AND o.Estado = 1";
+                    cmd.Parameters.AddWithValue("@ruleta", ruleta);
+                    var entity = new List<MovimientoExtend>();
+                    using (var reader = await cmd.ExecuteReaderAsync())
+                    {
+                        while (reader.Read())
+                        {
+                            var m = new MovimientoExtend()
+                            {
+                                MovimientoId = (int)(reader["MovimientoId"]),
+                                OperacionId = (int)(reader["OperacionId"]),
+                                ApuestaId = (int)(reader["ApuestaId"]),
+                                Numero = (int)(reader["Numero"]),
+                                Ingreso = Convert.ToDecimal((reader["Ingreso"])),
+                                Estado = (StatusOperacion)(reader["Estado"])
+                            };
+                            entity.Add(m);
+                        }
+                    }
+                    return entity;
+                }
+            }
+        }
     }
 }

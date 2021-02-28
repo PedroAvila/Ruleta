@@ -28,6 +28,7 @@ namespace TecSoftware.Api.Controllers
         {
             try
             {
+                //apuestaDto.Pago = Math.Truncate(apuestaDto.Pago * 100M) / 100M;
                 var apuesta = _mapper.Map<Apuesta>(apuestaDto);
                 await _sdApuesta.PlaceBet(apuesta);
                 apuestaDto = _mapper.Map<ApuestaDto>(apuesta);

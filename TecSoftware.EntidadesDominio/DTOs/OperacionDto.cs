@@ -9,6 +9,6 @@ namespace TecSoftware.EntidadesDominio
         public int OperacionId { get; set; }
         public int RuletaId { get; set; }
         public string Fecha { get; set; }
-        public EstatusOperacion Estado { get; set; }
+        public StatusOperacion Estado { get; set; }
     }
 }

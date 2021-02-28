@@ -17,29 +17,39 @@ namespace TecSoftware.ServiciosDominio
 
         public async Task PlaceBet(Apuesta entity)
         {
-            var operacion = _repositoryOperacion.CheckRouletteOpening(entity.RuletaId);
-            if (operacion.Result != null)
+            if (entity.Numero >= 0 && entity.Numero <= 36)
             {
-                if (operacion.Result.Estado == EstatusOperacion.Abierto)
+                var operacion = _repositoryOperacion.CheckRouletteOpening(entity.RuletaId);
+                if (operacion.Result != null)
                 {
-                    using (var scope = new TransactionScope())
+                    if (operacion.Result.Estado == StatusOperacion.Abierto)
                     {
-                        await _repositoryApuesta.PlaceBet(entity);
-                        var movimiento = new Movimiento()
+                        using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                         {
-                            OperacionId = operacion.Result.OperacionId,
-                            ApuestaId = entity.ApuestaId,
-                            Ingreso = entity.Pago
-                        };
-                        await _repositoryMovimiento.Create(movimiento);
-                        scope.Complete();
+                            await _repositoryApuesta.PlaceBet(entity);
+                            await CreateMovimiento(operacion.Result.OperacionId, entity.ApuestaId, entity.Pago);
+                            scope.Complete();
+                        }
                     }
+                    else
+                        throw new CustomException("La ruleta se encuentra cerrada.");
                 }
                 else
-                    throw new CustomException("La ruleta se encuentra cerrada.");
+                    throw new CustomException("La ruleta no se ha inicializado.");
             }
             else
-                throw new CustomException("La ruleta no se ha inicializado");
+                throw new CustomException("El número que aposto no es valido.");
+        }
+
+        private async Task CreateMovimiento(int operacion, int apuesta, decimal ingreso)
+        {
+            var movimiento = new Movimiento()
+            {
+                OperacionId = operacion,
+                ApuestaId = apuesta,
+                Ingreso = ingreso
+            };
+            await _repositoryMovimiento.Create(movimiento);
         }
     }
 }

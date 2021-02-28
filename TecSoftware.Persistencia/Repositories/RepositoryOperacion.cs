@@ -28,7 +28,7 @@ namespace TecSoftware.Persistencia
                             if (reader.Read())
                             {
                                 entity.OperacionId = (int)(reader["OperacionId"]);
-                                entity.Estado = (EstatusOperacion)(reader["Estado"]);
+                                entity.Estado = (StatusOperacion)(reader["Estado"]);
                             }
                             return entity;
                         }

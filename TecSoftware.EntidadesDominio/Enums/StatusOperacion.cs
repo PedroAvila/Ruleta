@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TecSoftware.EntidadesDominio
 {
-    public enum EstatusOperacion : int
+    public enum StatusOperacion : int
     {
         Abierto = 1,
         Cerrado = 2
