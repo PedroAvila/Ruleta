@@ -1,2 +1,2 @@
 # Ruleta
-Web API ASP.NET NET CORE 3.1, Docker y Redis
+Web API ASP.NET NET CORE 3.1, SQL Server, Azure
