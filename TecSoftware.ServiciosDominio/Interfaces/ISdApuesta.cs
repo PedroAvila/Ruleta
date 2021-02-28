@@ -6,9 +6,8 @@ using TecSoftware.EntidadesDominio;
 
 namespace TecSoftware.ServiciosDominio
 {
-    public interface ISdOperacion
+    public interface ISdApuesta
     {
-        Task RouletteOpening(Operacion entity);
-        Task<Operacion> CheckRouletteOpening(int ruleta);
+        Task PlaceBet(Apuesta entity);
     }
 }

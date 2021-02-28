@@ -13,6 +13,11 @@ namespace TecSoftware.ServiciosDominio
         private readonly RepositoryOperacion _repositoryOperacion = new RepositoryOperacion();
         private readonly RepositoryRuleta _repositoryRuleta = new RepositoryRuleta();
 
+        public async Task<Operacion> CheckRouletteOpening(int ruleta)
+        {
+            return await _repositoryOperacion.CheckRouletteOpening(ruleta);
+        }
+
         public async Task RouletteOpening(Operacion entity)
         {
             decimal maximumAmount = await _repositoryRuleta.GetMaximumAmount(entity.RuletaId);

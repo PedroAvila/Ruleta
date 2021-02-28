@@ -14,7 +14,7 @@ namespace TecSoftware.Api
             CreateMap<Ruleta, RuletaDto>().ReverseMap();
             CreateMap<Operacion, OperacionDto>().ReverseMap();
             CreateMap<RuletaApuesta, RuletaApuestaDto>().ReverseMap();
+            CreateMap<Apuesta, ApuestaDto>().ReverseMap();
         }
-
     }
 }

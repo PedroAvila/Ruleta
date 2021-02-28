@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace TecSoftware.Persistencia
 {
-    public interface IOperacion<T> where T: class
+    public interface IApuesta<T> where T : class
     {
-        Task RouletteOpening(T entity);
-        Task<T> CheckRouletteOpening(int ruleta);
+        Task PlaceBet(T entity);
     }
 }
