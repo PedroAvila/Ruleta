@@ -36,6 +36,7 @@ namespace TecSoftware.Api
             services.AddTransient<ISdRuleta, SdRuleta>();
             services.AddTransient<ISdOperacion, SdOperacion>();
             services.AddTransient<ISdRuletaApuesta, SdRuletaApuesta>();
+            services.AddTransient<ISdApuesta, SdApuesta>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

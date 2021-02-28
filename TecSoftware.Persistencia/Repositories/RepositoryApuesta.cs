@@ -17,12 +17,12 @@ namespace TecSoftware.Persistencia
                 using (var cmd = cn.CreateCommand())
                 {
                     cmd.CommandText = "INSERT INTO Apuestas(RuletaId, ClienteId, Numero, Pago)" +
-                                 " VALUES(@RuletaId, @ClienteId, @Numero, @Pago)";
+                                 " VALUES(@RuletaId, @ClienteId, @Numero, @Pago) SELECT SCOPE_IDENTITY()";
                     cmd.Parameters.AddWithValue("@RuletaId", entity.RuletaId);
                     cmd.Parameters.AddWithValue("@ClienteId", entity.ClienteId);
                     cmd.Parameters.AddWithValue("@Numero", entity.Numero);
-                    cmd.Parameters.AddWithValue("@Pago", entity.Pago;
-                    await cmd.ExecuteNonQueryAsync();
+                    cmd.Parameters.AddWithValue("@Pago", entity.Pago);
+                    entity.ApuestaId = Convert.ToInt32(await cmd.ExecuteScalarAsync());
                 }
             }
         }
