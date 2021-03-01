@@ -9,6 +9,6 @@ namespace TecSoftware.ServiciosDominio
     public interface ISdMovimiento
     {
         Task Create(Movimiento entity);
-        Task ClosingBets(int ruleta);
+        //Task ClosingBets(int ruleta);
     }
 }
